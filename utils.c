@@ -1,7 +1,12 @@
 // utils.c – shared helper functions
 #include "scheduler.h"
 
-const char *TASK_NAMES[] = {"Message", "Notification", "Upload", "LiveStream"};
+const char *TASK_NAMES[] = {
+"Message",
+ "Notification",
+ "Upload",
+ "LiveStream",
+};//GTK's gtk_string_list_new() expects a NULL-terminated array
 
 /* ── Input ─────────────────────────────────────────────────────────────── */
 void input_processes(Process proc[], int *n)

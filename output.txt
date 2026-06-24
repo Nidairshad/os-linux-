@@ -1,0 +1,123 @@
+
+╔══════════════════════════════════════════════════════╗
+║         FCFS – First Come First Served               ║
+╚══════════════════════════════════════════════════════╝
+
+  Gantt Chart:
+  ---------
+  | IDLE| P1| P2|
+  ---------
+  0  1  2  3
+
+  PID  Name           Type         Arrival  Burst    Finish      Turnaround  Waiting   Response
+  ----------------------------------------------------------------------------------------
+  1    1              Notification 1        1        2           1           0         0
+  2    2              Message      2        1        3           1           0         0
+
+  Averages:
+    Waiting Time    : 0.00
+    Turnaround Time : 1.00
+    Response Time   : 0.00
+    CPU Utilization : 66.7%
+    Throughput      : 0.6667 tasks/unit
+
+╔══════════════════════════════════════════════════════╗
+║         SJF – Shortest Job First (Non-Preemptive)    ║
+╚══════════════════════════════════════════════════════╝
+
+  Gantt Chart:
+  ---------
+  | IDLE| P1| P2|
+  ---------
+  0  1  2  3
+
+  PID  Name           Type         Arrival  Burst    Finish      Turnaround  Waiting   Response
+  ----------------------------------------------------------------------------------------
+  1    1              Notification 1        1        2           1           0         0
+  2    2              Message      2        1        3           1           0         0
+
+  Averages:
+    Waiting Time    : 0.00
+    Turnaround Time : 1.00
+    Response Time   : 0.00
+    CPU Utilization : 66.7%
+    Throughput      : 0.6667 tasks/unit
+
+╔══════════════════════════════════════════════════════╗
+║         Round Robin (Quantum =  1)                   ║
+╚══════════════════════════════════════════════════════╝
+
+  Gantt Chart:
+  ---------
+  | IDLE| P1| P2|
+  ---------
+  0  1  2  3
+
+  PID  Name           Type         Arrival  Burst    Finish      Turnaround  Waiting   Response
+  ----------------------------------------------------------------------------------------
+  1    1              Notification 1        1        2           1           0         0
+  2    2              Message      2        1        3           1           0         0
+
+  Averages:
+    Waiting Time    : 0.00
+    Turnaround Time : 1.00
+    Response Time   : 0.00
+    CPU Utilization : 66.7%
+    Throughput      : 0.6667 tasks/unit
+
+╔══════════════════════════════════════════════════════╗
+║         Priority Scheduling (Non-Preemptive)         ║
+║         (Lower priority number = Higher priority)    ║
+╚══════════════════════════════════════════════════════╝
+
+  Gantt Chart:
+  ---------
+  | IDLE| P1| P2|
+  ---------
+  0  1  2  3
+
+  PID  Name           Type         Arrival  Burst    Finish      Turnaround  Waiting   Response
+  ----------------------------------------------------------------------------------------
+  1    1              Notification 1        1        2           1           0         0
+  2    2              Message      2        1        3           1           0         0
+
+  Averages:
+    Waiting Time    : 0.00
+    Turnaround Time : 1.00
+    Response Time   : 0.00
+    CPU Utilization : 66.7%
+    Throughput      : 0.6667 tasks/unit
+
+╔══════════════════════════════════════════════════════════════════════════╗
+║                   ALGORITHM COMPARISON REPORT                           ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+  Metric               FCFS           SJF            Round Robin    Priority      
+  ----------------------------------------------------------------------------
+  Avg Waiting          0.00           0.00           0.00           0.00          
+  Avg Turnaround       1.00           1.00           1.00           1.00          
+  Avg Response         0.00           0.00           0.00           0.00          
+  CPU Util (%)         100.0          100.0          100.0          100.0         
+  Throughput           0.6667         0.6667         0.6667         0.6667        
+  Fairness (0-1)       1.000          1.000          1.000          1.000         
+  Starvation Risk      NO             NO             NO             NO            
+
+  ┌─────────────────────────────────────────────────────┐
+  │              BEST ALGORITHM PER METRIC              │
+  ├─────────────────────────────────────────────────────┤
+  │  Least Avg Waiting    : FCFS                        │
+  │  Least Avg Turnaround : FCFS                        │
+  │  Least Avg Response   : FCFS                        │
+  │  Most Fair            : FCFS                        │
+  │  Best Throughput      : FCFS                        │
+  └─────────────────────────────────────────────────────┘
+
+  QUALITATIVE ANALYSIS (Social Media Context)
+  ─────────────────────────────────────────────
+  FCFS        : Simple, fair order, but long streams block messages.
+  SJF         : Best avg wait; notifications/msgs (short) finish fast.
+                Risk: uploads/streams (long) may starve.
+  Round Robin : Most fair; all tasks get timeslices. Good for live
+                streams & interactive notifications.
+  Priority    : Critical alerts handled first. Risk of low-priority
+                uploads starving if high-priority tasks keep arriving.
