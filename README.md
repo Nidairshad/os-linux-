@@ -5,8 +5,8 @@ A lightweight system that sho a social media notification server handling events
 git clone https://github.com/your-username/os-linux-.git
 cd os-linux-
 2. Compile the program
-gcc notification_server.c -o server
+makefile
 3. Run the server
-./server
+makefile or ./scheduler
 
 .....
