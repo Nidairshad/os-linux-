@@ -4,8 +4,9 @@ echo "---------Linux process Monitor---------"
 
 echo "\nSystem Information\n"
 
-echo "User : $(whoami)"
+echo "Current User : $(whoami)"
 echo "Hostname : $(hostname)"
+echo "Kernel : $(uname -r)"
 echo "Shell : $SHELL"
 echo "Uptime: $(uptime -p)"
 
