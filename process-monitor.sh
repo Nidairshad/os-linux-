@@ -33,26 +33,6 @@ echo "TOP MEMORY PROCESSES "
 
 ps aux --sort=-%mem | head -6
 
-echo
-
-echo "FIREFOX PROCESS "
-echo
-
-pgrep -a firefox
-
-if [ $? -ne 0 ]; then
-    echo "Firefox is not running."
-fi
-
-echo
-
-echo "Firefox PIDS"
-
-pidof Firefox
-
-if [ $? -ne 0 ]; then
-   echo "NO FIREFOX PROCESS FOUND."
-fi
 
 echo
 
@@ -111,6 +91,10 @@ echo "---------------------------"
 nslookup google.com
 
 echo
+echo "[8] DNS Configuration"
+resolvectl status
+
+
 echo "-----------------------------"
 echo "end of report"
 

@@ -1,0 +1,4 @@
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p2  468G   20G  425G   5% /
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p2  468G   20G  425G   5% /
