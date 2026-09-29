@@ -1,3 +1,4 @@
 *.logs
 reports/*.txt
 .env
+notes.txt
