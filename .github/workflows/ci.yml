@@ -1,0 +1,21 @@
+name: Linux Toolkit CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build web Docker image
+        run: docker build -t linux-toolkit-web .
+
+      - name: Build API Docker image
+        run: docker build -t linux-toolkit-api ./backend
